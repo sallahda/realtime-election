@@ -6,7 +6,7 @@ from confluent_kafka import Consumer, KafkaException, KafkaError, SerializingPro
 from datetime import datetime
 import psycopg2
 
-from main import delivery_report
+from app import delivery_report
 
 conf = {
     'bootstrap.servers': 'localhost:9092'

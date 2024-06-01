@@ -56,15 +56,16 @@ if __name__ == "__main__":
                  .select('data.*')
                  )
      
-     # Preprocessing step: Typecasting and Watermarking
+     # Typecasting and Watermarking
      votes_df = votes_df.withColumn('voting_time', col('voting_time').cast(TimestampType())) \
           .withColumn('vote', col('vote').cast(IntegerType()))
      
      enriched_votes_df = votes_df.withWatermark('voting_time', '1 minute')
      
-     # Aggregate votes per candidate and turnout by location
+     # Aggregate votes per candidate 
      votes_per_candidates = enriched_votes_df.groupby('candidate_id', 'candidate_name', 'party_affiliation', 'photo_url').agg(_sum('vote').alias('total_votes'))
      
+     # Aggregate votes for turnout by location
      turnout_by_location = enriched_votes_df.groupby('address.state').count().alias('total_votes')
      
      votes_per_candidates_to_kafka = (votes_per_candidates.selectExpr('to_json(struct(*)) AS value')
