@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Except for these files.
+!.gitignore
+!app.py
+!database.py
+!docker-compose.yml
+!postgresql-42.7.3.jar
+!requirements.txt
+!spark-streaming.py
+!voting-system

@@ -72,7 +72,7 @@ if __name__ == "__main__":
         conn = psycopg2.connect(
             dbname="voting",
             user="postgres",
-            password="sallah",
+            password="postgres",
             host="localhost",
             port="5432"
         )        
