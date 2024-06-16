@@ -10,7 +10,7 @@ if __name__ == "__main__":
     spark = (SparkSession.builder
              .appName("Realtime Voting System")
              .config('spark.jars.packages', 'org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1')
-             .config("spark.jars", '/Users/sdari/VSC/realtime-election-project/spark-sql-kafka-0-10_2.12-3.5.1.jar,/Users/sdari/VSC/realtime-election-project/postgresql-42.7.3.jar')  # PostgreSQL driver
+             .config("spark.jars", 'jars/spark-sql-kafka-0-10_2.12-3.5.1.jar,jars/postgresql-42.7.3.jar')  # PostgreSQL driver
              .config('spark.sql.adaptive.enable', 'false')  # Disable adaptive query execution
              .getOrCreate()
              )
