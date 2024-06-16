@@ -69,13 +69,7 @@ if __name__ == "__main__":
     producer = SerializingProducer({'bootstrap.servers': 'localhost:9092'})
     
     try:
-        conn = psycopg2.connect(
-            dbname="voting",
-            user="postgres",
-            password="postgres",
-            host="localhost",
-            port="5432"
-        )        
+        conn = psycopg2.connect("host=localhost dbname=voting user=postgres password=postgres")     
         cur = conn.cursor()
         
         create_tables(conn, cur)

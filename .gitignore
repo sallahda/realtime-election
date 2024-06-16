@@ -3,10 +3,21 @@
 
 # Except for these files.
 !.gitignore
+
+# Application code
 !app.py
 !database.py
-!docker-compose.yml
-!postgresql-42.7.3.jar
-!requirements.txt
+!voting-system.py
 !spark-streaming.py
-!voting-system
+!streamlit-dashboard.py
+
+# Config
+!docker-compose.yml
+!requirements.txt
+
+# Checkpoints folder
+!checkpoints
+
+# Necessary jars
+!jars/postgresql-42.7.3.jar
+!jars/spark-sql-kafka-0-10_2.12-3.5.1.jar
