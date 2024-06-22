@@ -17,6 +17,8 @@
 
 # Checkpoints folder
 !checkpoints/
+!checkpoints/checkpoint1
+!checkpoints/checkpoint2
 
 # Necessary jars
 !jars/

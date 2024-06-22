@@ -60,12 +60,12 @@ This is a side project focused on working with modern big data technologies to b
     docker-compose ps
     ```
 
-2. Run the application:
+2. Run the application, to create tables and generate mock data for candidates and voters:
     ```bash
     python app.py
     ```
 
-3. Access the application through the provided endpoint.
+3.
 
 ## Contributing
 
@@ -74,13 +74,4 @@ This is a side project focused on working with modern big data technologies to b
 3. Commit your changes (`git commit -m 'Add new feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- Thanks to the developers of Apache Kafka and Apache Spark for their excellent tools.
-- Special thanks to the contributors of this project.
 
