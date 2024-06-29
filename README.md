@@ -33,6 +33,13 @@ This is a side project focused on working with modern big data technologies to b
 - **Python**: Make sure Python 3.9 or later is installed.
 - **Docker**: Docker and Docker Compose need to be installed on your machine.
 
+  ## Components
+
+- **main.py**: This script creates the required tables in PostgreSQL (candidates, voters, and votes), sets up the Kafka topic, and creates a copy of the votes table in the Kafka topic. It also includes logic to consume votes from the Kafka topic and produce data to `voters_topic` on Kafka.
+- **voting.py**: This script contains the logic to consume votes from the `voters_topic` on Kafka, generate voting data, and produce data to `votes_topic` on Kafka.
+- **spark-streaming.py**: This script consumes votes from the `votes_topic` on Kafka, enriches the data with information from PostgreSQL, aggregates the votes, and produces the aggregated data to specific topics on Kafka.
+- **streamlit-app.py**: This script consumes the aggregated voting data from the Kafka topic and PostgreSQL and displays the voting data in real-time using Streamlit.
+
 ## Installation
 
 1. Clone the repository:
@@ -69,7 +76,7 @@ This is a side project focused on working with modern big data technologies to b
     python app.py
     ```
 
-3. In different terminals, run the following commands simultaneously:
+3. In different terminals, run the following commands simultaneously, the voting system will start streaming votes with Kafka to a topic, Spark will consume this data, store and process it for the dashboard:
     ```bash
     python voting-system.py
     python spark-streaming.py
@@ -83,3 +90,4 @@ This is a side project focused on working with modern big data technologies to b
 ## Acknowledgements
 
 Thanks to Yusuf Ganiyu for the knowledge shared through his tutorial.
+https://www.youtube.com/watch?v=X-JnC9daQxE
