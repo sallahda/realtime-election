@@ -24,3 +24,6 @@
 !jars/
 !jars/postgresql-42.7.3.jar
 !jars/spark-sql-kafka-0-10_2.12-3.5.1.jar
+
+!images/
+!images/b6f23813-84ad-4303-8f7a-21485fd49010.png
