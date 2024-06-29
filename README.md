@@ -1,5 +1,3 @@
-## Realtime Election | Data Engineering Project
-
 # Realtime Election Data Project
 
 ## Overview
@@ -10,10 +8,9 @@ This is a side project focused on working with modern big data technologies to b
 - [Overview](#overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 ## Features
@@ -21,6 +18,7 @@ This is a side project focused on working with modern big data technologies to b
 - Data processing and analysis using Apache Spark.
 - Dockerized deployment for easy setup and scaling.
 - Python-based application with PostgreSQL integration.
+- Real-time data visualization with Streamlit.
 
 ## Technologies Used
 - **Apache Kafka**: For real-time data streaming.
@@ -28,6 +26,12 @@ This is a side project focused on working with modern big data technologies to b
 - **Docker**: For containerization.
 - **PostgreSQL**: As the database.
 - **Python**: The main programming language used.
+
+## Prerequisites
+
+- **Java Development Kit (JDK)**: Ensure you have Java 8 or later installed, which is required for PySpark.
+- **Python**: Make sure Python 3.9 or later is installed.
+- **Docker**: Docker and Docker Compose need to be installed on your machine.
 
 ## Installation
 
@@ -48,9 +52,9 @@ This is a side project focused on working with modern big data technologies to b
     pip install -r requirements.txt
     ```
 
-4. Start the services using Docker Compose:
+4. Build and run the Docker containers:
     ```bash
-    docker-compose up
+    docker-compose up --build
     ```
 
 ## Usage
@@ -60,18 +64,22 @@ This is a side project focused on working with modern big data technologies to b
     docker-compose ps
     ```
 
-2. Run the application, to create tables and generate mock data for candidates and voters:
+2. Run the application to create the database, tables, and generate mock data:
     ```bash
     python app.py
     ```
 
-3.
+3. In different terminals, run the following commands simultaneously:
+    ```bash
+    python voting-system.py
+    python spark-streaming.py
+    ```
 
-## Contributing
+4. To visualize all the processed data in real-time, run:
+    ```bash
+    streamlit run streamlit-dashboard.py
+    ```
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
+## Acknowledgements
 
+Thanks to Yusuf Ganiyu for the knowledge shared through his tutorial.
