@@ -27,7 +27,10 @@ This is a side project focused on working with modern big data technologies to b
 - **PostgreSQL**: As the database.
 - **Python**: The main programming language used.
 
+## Architecture 
+
 ![system_architecture.jpg](images/b6f23813-84ad-4303-8f7a-21485fd49010.png)
+
 ## Prerequisites
 
 - **Java Development Kit (JDK)**: Ensure you have Java 8 or later installed, which is required for PySpark.
